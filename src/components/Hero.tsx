@@ -228,37 +228,36 @@ const Hero = () => {
           </span>
           <span className="w-12 h-px bg-slate-600" />
         </motion.div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          className="absolute bottom-12 left-1/2 transform -translate-x-1/2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, y: [0, 10, 0] }}
-          transition={{
-            opacity: { delay: 1, duration: 0.5 },
-            y: { repeat: Infinity, duration: 2, ease: "easeInOut" },
-          }}
-        >
-          <div className="flex flex-col items-center gap-2 text-slate-500">
-            <span className="font-['Inter'] text-xs tracking-widest uppercase">
-              Scroll to explore
-            </span>
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={1.5}
-                d="M19 14l-7 7m0 0l-7-7m7 7V3"
-              />
-            </svg>
-          </div>
-        </motion.div>
       </div>
+      {/* Scroll indicator */}
+      <motion.div
+        className="absolute bottom-12 left-1/2 transform -translate-x-1/2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, y: [0, 10, 0] }}
+        transition={{
+          opacity: { delay: 1, duration: 0.5 },
+          y: { repeat: Infinity, duration: 2, ease: "easeInOut" },
+        }}
+      >
+        <div className="flex flex-col items-center gap-2 text-slate-500">
+          <span className="font-['Inter'] text-xs tracking-widest uppercase">
+            Scroll to explore
+          </span>
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={1.5}
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+            />
+          </svg>
+        </div>
+      </motion.div>
     </section>
   );
 };

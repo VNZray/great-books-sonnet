@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import TypewriterText from "./TypewriterText";
 
 interface SonnetLine {
   original: string;
@@ -67,6 +68,35 @@ const sonnetLines: SonnetLine[] = [
 
 const PoemSection = () => {
   const [hoveredLine, setHoveredLine] = useState<number | null>(null);
+  const [currentLine, setCurrentLine] = useState(0);
+  const [startTyping, setStartTyping] = useState(false);
+
+  // Start typing animation when section comes into view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !startTyping) {
+            setStartTyping(true);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    const section = document.getElementById("poem-content");
+    if (section) {
+      observer.observe(section);
+    }
+
+    return () => observer.disconnect();
+  }, [startTyping]);
+
+  const handleLineComplete = () => {
+    if (currentLine < sonnetLines.length - 1) {
+      setCurrentLine(currentLine + 1);
+    }
+  };
 
   return (
     <section className="min-h-screen py-24 px-6 bg-linear-to-b from-slate-950 via-slate-900 to-slate-950 relative">
@@ -97,6 +127,7 @@ const PoemSection = () => {
 
         {/* Poem container */}
         <motion.div
+          id="poem-content"
           className="bg-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 md:p-12 shadow-2xl"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -108,57 +139,71 @@ const PoemSection = () => {
               <motion.div
                 key={index}
                 className="relative group"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                viewport={{ once: true }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: index <= currentLine && startTyping ? 1 : 0 }}
+                transition={{ duration: 0.3 }}
                 onMouseEnter={() => setHoveredLine(index)}
                 onMouseLeave={() => setHoveredLine(null)}
               >
-                <div className="relative overflow-hidden">
-                  {/* Original line */}
-                  <p
-                    className={`font-['Cormorant_Garamond'] text-lg md:text-xl transition-all duration-300 cursor-pointer
-                      ${
-                        hoveredLine === index
-                          ? "text-amber-300 translate-x-2"
-                          : "text-slate-200 hover:text-amber-200"
-                      }
-                      ${
-                        index === 11 ? "mb-4" : ""
-                      } // Add space before the couplet
-                    `}
-                  >
-                    <span className="text-slate-600 text-sm mr-4 font-['Inter']">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    {line.original}
-                  </p>
-
-                  {/* Modern translation tooltip */}
-                  <motion.div
-                    className="absolute left-0 top-full mt-1 z-20"
-                    initial={{ opacity: 0, y: -10, scale: 0.95 }}
-                    animate={{
-                      opacity: hoveredLine === index ? 1 : 0,
-                      y: hoveredLine === index ? 0 : -10,
-                      scale: hoveredLine === index ? 1 : 0.95,
-                    }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <div className="bg-amber-900/90 backdrop-blur-sm text-amber-100 px-4 py-2 rounded-lg text-sm font-['Inter'] shadow-xl border border-amber-700/50 max-w-md">
-                      <span className="text-amber-400 font-medium">
-                        Modern:{" "}
+                {index <= currentLine && startTyping && (
+                  <div className="relative overflow-hidden">
+                    {/* Line number and typewriter text */}
+                    <div className="flex items-start">
+                      <span className="text-slate-600 text-sm mr-4 font-['Inter'] mt-1">
+                        {String(index + 1).padStart(2, "0")}
                       </span>
-                      {line.modern}
+                      <div className="flex-1">
+                        {index === currentLine ? (
+                          <TypewriterText
+                            text={line.original}
+                            speed={40}
+                            className={`font-['Cormorant_Garamond'] text-lg md:text-xl transition-all duration-300 cursor-pointer ${
+                              hoveredLine === index
+                                ? "text-amber-300"
+                                : "text-slate-200 hover:text-amber-200"
+                            }`}
+                            onComplete={handleLineComplete}
+                          />
+                        ) : (
+                          <p
+                            className={`font-['Cormorant_Garamond'] text-lg md:text-xl transition-all duration-300 cursor-pointer ${
+                              hoveredLine === index
+                                ? "text-amber-300 translate-x-2"
+                                : "text-slate-200 hover:text-amber-200"
+                            }`}
+                          >
+                            {line.original}
+                          </p>
+                        )}
+                      </div>
                     </div>
-                  </motion.div>
-                </div>
+
+                    {/* Modern translation tooltip */}
+                    <motion.div
+                      className="absolute left-0 top-full mt-1 z-20"
+                      initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                      animate={{
+                        opacity: hoveredLine === index ? 1 : 0,
+                        y: hoveredLine === index ? 0 : -10,
+                        scale: hoveredLine === index ? 1 : 0.95,
+                      }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <div className="bg-amber-900/90 backdrop-blur-sm text-amber-100 px-4 py-2 rounded-lg text-sm font-['Inter'] shadow-xl border border-amber-700/50 max-w-md">
+                        <span className="text-amber-400 font-medium">
+                          Modern:{" "}
+                        </span>
+                        {line.modern}
+                      </div>
+                    </motion.div>
+                  </div>
+                )}
 
                 {/* Quatrain dividers */}
-                {(index === 3 || index === 7 || index === 11) && (
-                  <div className="w-16 h-px bg-linear-to-r from-amber-500/50 to-transparent my-6 ml-12" />
-                )}
+                {(index === 3 || index === 7 || index === 11) &&
+                  index < currentLine && (
+                    <div className="w-16 h-px bg-linear-to-r from-amber-500/50 to-transparent my-6 ml-12" />
+                  )}
               </motion.div>
             ))}
           </div>
