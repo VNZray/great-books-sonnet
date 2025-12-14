@@ -140,7 +140,9 @@ const PoemSection = () => {
                 key={index}
                 className="relative group"
                 initial={{ opacity: 0 }}
-                animate={{ opacity: index <= currentLine && startTyping ? 1 : 0 }}
+                animate={{
+                  opacity: index <= currentLine && startTyping ? 1 : 0,
+                }}
                 transition={{ duration: 0.3 }}
                 onMouseEnter={() => setHoveredLine(index)}
                 onMouseLeave={() => setHoveredLine(null)}
