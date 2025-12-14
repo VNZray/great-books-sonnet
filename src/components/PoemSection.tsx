@@ -148,7 +148,7 @@ const PoemSection = () => {
                 onMouseLeave={() => setHoveredLine(null)}
               >
                 {index <= currentLine && startTyping && (
-                  <div className="relative overflow-hidden">
+                  <div className="relative">
                     {/* Line number and typewriter text */}
                     <div className="flex items-start">
                       <span className="text-slate-600 text-sm mr-4 font-['Inter'] mt-1">
@@ -181,23 +181,22 @@ const PoemSection = () => {
                     </div>
 
                     {/* Modern translation tooltip */}
-                    <motion.div
-                      className="absolute left-0 top-full mt-1 z-20"
-                      initial={{ opacity: 0, y: -10, scale: 0.95 }}
-                      animate={{
-                        opacity: hoveredLine === index ? 1 : 0,
-                        y: hoveredLine === index ? 0 : -10,
-                        scale: hoveredLine === index ? 1 : 0.95,
-                      }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <div className="bg-amber-900/90 backdrop-blur-sm text-amber-100 px-4 py-2 rounded-lg text-sm font-['Inter'] shadow-xl border border-amber-700/50 max-w-md">
-                        <span className="text-amber-400 font-medium">
-                          Modern:{" "}
-                        </span>
-                        {line.modern}
-                      </div>
-                    </motion.div>
+                    {hoveredLine === index && (
+                      <motion.div
+                        className="absolute left-12 top-full mt-2 z-50 pointer-events-none"
+                        initial={{ opacity: 0, y: -5 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -5 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <div className="bg-amber-900/95 backdrop-blur-sm text-amber-100 px-4 py-3 rounded-lg text-sm font-['Inter'] shadow-2xl border border-amber-700/50 max-w-md">
+                          <span className="text-amber-400 font-semibold">
+                            Modern:{" "}
+                          </span>
+                          {line.modern}
+                        </div>
+                      </motion.div>
+                    )}
                   </div>
                 )}
 
