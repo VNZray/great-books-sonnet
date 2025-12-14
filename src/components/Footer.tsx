@@ -24,9 +24,6 @@ const Footer = () => {
             <p className="font-['Playfair_Display'] text-xl text-slate-100">
               Great Books Final Project
             </p>
-            <p className="font-['Inter'] text-slate-400 text-sm">
-              A Literary Analysis of Shakespeare's Sonnet 18
-            </p>
           </div>
 
           {/* Author info */}
