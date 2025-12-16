@@ -12,9 +12,9 @@ const Footer = () => {
         >
           {/* Decorative quote */}
           <p className="font-['Cormorant_Garamond'] text-2xl md:text-3xl text-amber-200/80 italic mb-8">
-            "So long as men can breathe or eyes can see,
+            "O learn to read what silent love hath writ:
             <br />
-            So long lives this, and this gives life to thee."
+            To hear with eyes belongs to love's fine wit."
           </p>
 
           <div className="w-24 h-px bg-linear-to-r from-transparent via-amber-500/50 to-transparent mx-auto mb-8" />

@@ -1,7 +1,7 @@
 
-# Great Books Final Project: Sonnet 18 Interactive Analysis
+# Great Books Final Project: Sonnet 23 Interactive Analysis
 
-This website is an interactive, modern presentation of William Shakespeare's Sonnet 18, created as a final project for the Great Books course by Rayven Clores (4th Year BSIT Student, School of Computer and Information Science).
+This website is an interactive, modern presentation of William Shakespeare's Sonnet 23, created as a final project for the Great Books course by Rayven Clores (4th Year BSIT Student, School of Computer and Information Science).
 
 ## What is this website about?
 

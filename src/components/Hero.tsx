@@ -204,7 +204,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
         >
-          Sonnet 18
+          Sonnet 23
         </motion.h1>
 
         <motion.p
@@ -213,7 +213,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          "Shall I compare thee to a summer's day?"
+          "As an unperfect actor on the stage..."
         </motion.p>
 
         <motion.div

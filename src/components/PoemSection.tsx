@@ -9,60 +9,61 @@ interface SonnetLine {
 
 const sonnetLines: SonnetLine[] = [
   {
-    original: "Shall I compare thee to a summer's day?",
-    modern: "Should I compare you to a beautiful summer day?",
+    original: "As an unperfect actor on the stage,",
+    modern: "Like a nervous actor who forgets his lines on stage,",
   },
   {
-    original: "Thou art more lovely and more temperate:",
-    modern: "You are more lovely and more balanced:",
+    original: "Who with his fear is put beside his part,",
+    modern: "Who is so afraid that he can't perform his role,",
   },
   {
-    original: "Rough winds do shake the darling buds of May,",
-    modern: "Strong winds damage the delicate flowers of spring,",
+    original: "Or some fierce thing replete with too much rage,",
+    modern: "Or like someone filled with so much emotion,",
   },
   {
-    original: "And summer's lease hath all too short a date;",
-    modern: "And summer doesn't last long enough;",
+    original: "Whose strength's abundance weakens his own heart;",
+    modern: "That the intensity of their feelings overwhelms them;",
   },
   {
-    original: "Sometime too hot the eye of heaven shines,",
-    modern: "Sometimes the sun is too hot,",
+    original: "So I, for fear of trust, forget to say",
+    modern: "In the same way, I'm too afraid to express myself,",
   },
   {
-    original: "And often is his gold complexion dimm'd;",
-    modern: "And often it's hidden by clouds;",
+    original: "The perfect ceremony of love's rite,",
+    modern: "To speak the proper words that love requires,",
   },
   {
-    original: "And every fair from fair sometime declines,",
-    modern: "And everything beautiful eventually loses its beauty,",
+    original: "And in mine own love's strength seem to decay,",
+    modern: "And the power of my love seems to fade away,",
   },
   {
-    original: "By chance or nature's changing course untrimm'd;",
-    modern: "By accident or by nature's inevitable changes;",
+    original: "O'ercharged with burden of mine own love's might.",
+    modern: "Because I'm overwhelmed by how much I love you.",
   },
   {
-    original: "But thy eternal summer shall not fade,",
-    modern: "But your everlasting beauty shall not fade,",
+    original: "O let my books be then the eloquence",
+    modern: "So let my written words speak for me",
   },
   {
-    original: "Nor lose possession of that fair thou ow'st;",
-    modern: "Nor will you lose the beauty that you possess;",
+    original: "And dumb presagers of my speaking breast,",
+    modern: "As silent messengers of my feelings,",
   },
   {
-    original: "Nor shall death brag thou wander'st in his shade,",
-    modern: "Nor shall death claim you walk in his shadow,",
+    original: "Who plead for love, and look for recompense",
+    modern: "That ask for your love and hope for your response",
   },
   {
-    original: "When in eternal lines to time thou grow'st:",
-    modern: "When in these immortal verses you become one with time:",
+    original: "More than that tongue that more hath more express'd.",
+    modern: "Better than my tongue ever could.",
   },
   {
-    original: "So long as men can breathe or eyes can see,",
-    modern: "As long as people live and can see,",
+    original: "O learn to read what silent love hath writ:",
+    modern: "Please learn to read what my silent love has written:",
   },
   {
-    original: "So long lives this, and this gives life to thee.",
-    modern: "This poem will live on, and it will keep you alive.",
+    original: "To hear with eyes belongs to love's fine wit.",
+    modern:
+      "True love knows how to 'hear' with the eyes by reading heartfelt words.",
   },
 ];
 
@@ -118,7 +119,7 @@ const PoemSection = () => {
             The Poem
           </p>
           <h2 className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-slate-100 mb-4">
-            Sonnet 18
+            Sonnet 23
           </h2>
           <p className="font-['Inter'] text-slate-400 text-sm">
             Hover over each line to see the modern interpretation

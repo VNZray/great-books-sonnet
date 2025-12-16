@@ -3,24 +3,31 @@ import { useRef } from "react";
 
 const connections = [
   {
-    shakespeare: "Rough winds do shake the darling buds of May",
-    modern: "Climate change threatens our seasons",
-    icon: "🌍",
+    shakespeare:
+      "As an unperfect actor on the stage, Who with his fear is put beside his part",
+    modern:
+      "Social anxiety and performance pressure in modern presentations and public speaking",
+    icon: "🎤",
   },
   {
-    shakespeare: "And summer's lease hath all too short a date",
-    modern: "Our fear of time running out in a fast-paced world",
-    icon: "⏰",
+    shakespeare:
+      "So I, for fear of trust, forget to say The perfect ceremony of love's rite",
+    modern:
+      "Texting anxiety and difficulty expressing feelings face-to-face in the digital age",
+    icon: "💬",
   },
   {
-    shakespeare: "When in eternal lines to time thou grow'st",
-    modern: "Social media as modern-day immortality—posts that live forever",
-    icon: "📱",
+    shakespeare:
+      "O let my books be then the eloquence And dumb presagers of my speaking breast",
+    modern:
+      "Written communication as more authentic—emails, texts, and letters over phone calls",
+    icon: "📝",
   },
   {
-    shakespeare: "So long lives this, and this gives life to thee",
-    modern: "Digital legacies and how we preserve memories online",
-    icon: "💾",
+    shakespeare: "To hear with eyes belongs to love's fine wit",
+    modern:
+      "Reading emotions through text messages, understanding between the lines of digital communication",
+    icon: "👀",
   },
 ];
 
@@ -73,8 +80,9 @@ const ModernConnection = () => {
             Modern Connections
           </h2>
           <p className="font-['Inter'] text-slate-400 max-w-2xl mx-auto">
-            Shakespeare's themes from 400 years ago still resonate with our
-            daily lives in surprising and meaningful ways.
+            Shakespeare's struggle with verbal expression from 400 years ago
+            mirrors our modern communication challenges in profound and
+            surprising ways.
           </p>
         </motion.div>
 
@@ -131,19 +139,21 @@ const ModernConnection = () => {
           <div className="bg-linear-to-r from-slate-800/50 via-slate-900/50 to-slate-800/50 border border-slate-700/50 rounded-3xl p-8 md:p-12 text-center">
             <div className="max-w-3xl mx-auto">
               <h3 className="font-['Playfair_Display'] text-2xl md:text-3xl font-bold text-slate-100 mb-6">
-                The Universal Human Experience
+                The Universal Struggle to Communicate
               </h3>
               <p className="font-['Inter'] text-slate-400 leading-relaxed mb-8">
-                What makes Sonnet 18 truly remarkable is its exploration of
-                themes that every generation faces: the fear of mortality, the
-                desire for permanence, and the hope that something we create
-                will outlive us. Whether it's a sonnet carved in a book or a
-                digital footprint left online, we all seek to leave our mark on
-                the world.
+                What makes Sonnet 23 truly remarkable is its honest portrayal of
+                something we all experience: the struggle to express our deepest
+                feelings. Shakespeare's admission that he becomes tongue-tied
+                validates our own communication anxieties. Whether it's through
+                handwritten letters, carefully crafted texts, or heartfelt
+                emails, we continue to find that written words can express what
+                our voices cannot. The medium evolves, but the human need to be
+                understood remains timeless.
               </p>
               <div className="flex items-center justify-center gap-4">
                 <span className="w-12 h-px bg-amber-500/50" />
-                <span className="text-amber-400 text-2xl">♾️</span>
+                <span className="text-amber-400 text-2xl">💬</span>
                 <span className="w-12 h-px bg-amber-500/50" />
               </div>
             </div>

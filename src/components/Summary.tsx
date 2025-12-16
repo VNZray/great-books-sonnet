@@ -8,28 +8,28 @@ interface SummaryCard {
 
 const summaryCards: SummaryCard[] = [
   {
-    title: "The Question",
+    title: "The Struggle to Speak",
     content:
-      "Shakespeare opens with a rhetorical question, asking if he should compare his beloved to a summer's day. But he immediately suggests that such a comparison falls short—the person he loves surpasses even the beauty of summer.",
-    icon: "❓",
+      "Shakespeare compares himself to a nervous actor who forgets his lines, or someone overcome with emotion. He's so deeply in love that when he's in front of his beloved, fear and overwhelming feelings make him tongue-tied and unable to express himself properly.",
+    icon: "🎭",
   },
   {
-    title: "Nature's Flaws",
+    title: "The Power of Silence",
     content:
-      "The poet points out summer's imperfections: rough winds damage delicate flowers, the season is too brief, the sun can be too hot or hidden by clouds. Everything in nature is subject to change and decay.",
-    icon: "🍃",
+      "Rather than viewing his inability to speak as weakness, Shakespeare suggests that his silence is actually caused by the overwhelming strength of his love. The intensity of his feelings is so great that words fail him—it's not lack of love, but too much of it.",
+    icon: "💭",
   },
   {
-    title: "Eternal Beauty",
+    title: "Written Words as Voice",
     content:
-      "Unlike summer, the beloved's beauty will never fade. Death cannot claim them, and they will not lose their radiance. Shakespeare promises immortality through his verse.",
-    icon: "✨",
+      "Since he cannot speak his feelings aloud, Shakespeare turns to his 'books'—his written poems. He asks that these writings become his eloquence, serving as silent messengers that plead his case better than his stammering tongue ever could.",
+    icon: "📖",
   },
   {
-    title: "The Promise",
+    title: "The Reader's Role",
     content:
-      "The closing couplet delivers Shakespeare's powerful conclusion: as long as humanity exists and can read these words, this poem will live on—and so will the beauty it celebrates.",
-    icon: "📜",
+      "The final couplet makes a powerful request: learn to read what silent love has written. Shakespeare suggests that true love has a special wisdom—the ability to 'hear with eyes,' to understand feelings expressed through the written word rather than spoken speech.",
+    icon: "👁️",
   },
 ];
 
@@ -73,9 +73,9 @@ const Summary = () => {
             Summary & Analysis
           </h2>
           <p className="font-['Inter'] text-slate-400 max-w-2xl mx-auto">
-            Sonnet 18 is one of Shakespeare's most celebrated works, exploring
-            themes of beauty, time, mortality, and the power of art to preserve
-            what we love.
+            Sonnet 23 explores the paradox of being silenced by love's
+            intensity—when feelings are so powerful that words fail, and written
+            expression becomes more eloquent than speech.
           </p>
         </motion.div>
 
@@ -122,7 +122,8 @@ const Summary = () => {
         >
           <div className="inline-block bg-linear-to-r from-amber-900/30 via-amber-800/30 to-amber-900/30 border border-amber-600/30 rounded-2xl px-8 py-6">
             <p className="font-['Cormorant_Garamond'] text-xl md:text-2xl text-amber-100 italic">
-              "Art transcends time—while nature fades, poetry endures forever."
+              "When words fail, love writes its own language—one that speaks
+              directly to the heart."
             </p>
           </div>
         </motion.div>

@@ -2,19 +2,19 @@ import { motion } from "framer-motion";
 
 const reasons = [
   {
-    title: "Timeless Relevance",
+    title: "Deeply Relatable",
     description:
-      "In an age of fleeting digital content, Shakespeare's message about preserving beauty through art resonates more than ever.",
+      "We've all experienced moments when we couldn't find the right words to express our deepest feelings—this sonnet perfectly captures that universal struggle of being overwhelmed by emotion.",
   },
   {
-    title: "Emotional Depth",
+    title: "Communication Anxiety",
     description:
-      "The sonnet captures the universal human desire to hold onto what we love and fear losing—a feeling I deeply connect with.",
+      "In an age dominated by digital communication, many people struggle with authentic expression. Shakespeare's honesty about his fear and inadequacy in speaking his feelings resonates with modern social anxiety.",
   },
   {
-    title: "Masterful Craft",
+    title: "The Power of Writing",
     description:
-      "The way Shakespeare structures his argument across 14 lines, building to that powerful closing couplet, showcases literary genius.",
+      "This sonnet celebrates written expression as sometimes more powerful than speech—a message that speaks to writers, introverts, and anyone who expresses themselves better through text than conversation.",
   },
 ];
 
@@ -98,9 +98,10 @@ const WhyIChoseIt = () => {
 
               <div className="relative z-10">
                 <p className="font-['Cormorant_Garamond'] text-2xl md:text-3xl text-slate-200 italic leading-relaxed mb-8">
-                  This sonnet taught me that love isn't just about feelings—it's
-                  about creation. Shakespeare didn't just feel love; he built a
-                  monument to it that has outlasted centuries.
+                  This sonnet taught me that vulnerability and honesty are
+                  strengths, not weaknesses. Sometimes admitting we can't find
+                  the words is more powerful than pretending to have all the
+                  answers.
                 </p>
 
                 <div className="flex items-center gap-4">
@@ -134,10 +135,11 @@ const WhyIChoseIt = () => {
           viewport={{ once: true }}
         >
           <p className="font-['Inter'] text-slate-400 max-w-3xl mx-auto leading-relaxed">
-            Studying this sonnet has changed how I view literature. It's not
-            just about reading words on a page—it's about connecting with ideas
-            that transcend time and understanding that great art has the power
-            to make us immortal in some small way.
+            Studying this sonnet has changed how I view communication. It's
+            taught me that there are many ways to express love and
+            connection—and that sometimes the most heartfelt messages come not
+            from eloquent speeches, but from honest, written words that capture
+            what we truly feel inside.
           </p>
         </motion.div>
       </div>
